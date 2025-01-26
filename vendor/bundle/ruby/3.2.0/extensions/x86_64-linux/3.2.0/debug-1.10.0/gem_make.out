@@ -1,0 +1,19 @@
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+/home/samiul/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-o8uwb1 sitelibdir\=./.gem.20250125-69724-o8uwb1 clean
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-o8uwb1 sitelibdir\=./.gem.20250125-69724-o8uwb1
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-o8uwb1 sitelibdir\=./.gem.20250125-69724-o8uwb1 install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20250125-69724-o8uwb1/debug
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-o8uwb1 sitelibdir\=./.gem.20250125-69724-o8uwb1 clean
