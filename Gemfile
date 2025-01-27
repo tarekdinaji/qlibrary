@@ -72,3 +72,5 @@ end
 gem "bootstrap"
 gem "sassc-rails"
 gem "devise"
+
+gem "pundit", "~> 2.4"
