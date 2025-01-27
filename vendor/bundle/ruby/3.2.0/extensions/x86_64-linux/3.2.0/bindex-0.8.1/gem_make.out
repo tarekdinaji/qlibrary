@@ -1,0 +1,18 @@
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+/home/samiul/.rbenv/versions/3.2.2/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-agahqz sitelibdir\=./.gem.20250125-69724-agahqz clean
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-agahqz sitelibdir\=./.gem.20250125-69724-agahqz
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-agahqz sitelibdir\=./.gem.20250125-69724-agahqz install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20250125-69724-agahqz/skiptrace/internal
+
+current directory: /home/samiul/code/Project/qlibrary/vendor/bundle/ruby/3.2.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20250125-69724-agahqz sitelibdir\=./.gem.20250125-69724-agahqz clean
