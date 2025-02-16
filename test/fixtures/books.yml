@@ -1,0 +1,35 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  edition: MyString
+  language: MyString
+  isbn: MyString
+  description: MyText
+  cover_image: MyString
+  age_group: 1
+  available_copy: 1
+  total_copy: 1
+  book_location: MyString
+  publishing_date: 2025-02-16
+  publisher: MyString
+  category: one
+  sub_category: one
+  author: one
+
+two:
+  title: MyString
+  edition: MyString
+  language: MyString
+  isbn: MyString
+  description: MyText
+  cover_image: MyString
+  age_group: 1
+  available_copy: 1
+  total_copy: 1
+  book_location: MyString
+  publishing_date: 2025-02-16
+  publisher: MyString
+  category: two
+  sub_category: two
+  author: two
