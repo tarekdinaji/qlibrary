@@ -10,76 +10,53 @@
 
 
 puts "Creating categories..."
-fiction = Category.create!(title: "Fiction")
-non_fiction = Category.create!(title: "Non-Fiction")
-technology = Category.create!(title: "Technology")
-religious = Category.create!(title: "Religious")
-academic = Category.create!(title: "Academic")
-reference = Category.create!(title: "Reference")
+
+categories = ["fiction", "non_fiction", "academic", "religious", "reference", "technology"]
+categories.each do |c|
+  Category.create(title: c )
+end
 
 
 puts "Creating sub-categories..."
-SubCategory.create!([
-  { title: "Contemporary Fiction", category: fiction },
-  { title: "Classic Literature", category: fiction },
-  { title: "Science Fiction", category: fiction },
-  { title: "Mystery", category: fiction }
-])
 
-SubCategory.create!([
-  { title: "Biography", category: non_fiction },
-  { title: "History", category: non_fiction },
-  { title: "Science", category: non_fiction },
-  { title: "Self-Help", category: non_fiction }
-])
+sub_categories_fiction = ["contemporary fiction", "classic literature", "science fiction", "mystrey"]
+sub_categories_fiction.each do |s|
+  SubCategory.create(title: s, category_id: 1)
+end
 
-SubCategory.create!([
-  { title: "Programming", category: technology },
-  { title: "Cybersecurity", category: technology },
-  { title: "AI", category: technology },
-  { title: "Robotics", category: technology }
-])
+sub_categories_non_fiction = ["biography", "history", "science", "self-help"]
+sub_categories_non_fiction.each do |s|
+  SubCategory.create(title: s, category_id: 2)
+end
 
-SubCategory.create!([
-  { title: "Islam", category: religious },
-  { title: "Christianity", category: religious },
-  { title: "Buddhism", category: religious },
-  { title: "Hinduism", category: religious }
-])
+sub_categories_edu = ["bangla", "english", "mathematics", "religious_study", "biology", "economics", "science" ]
+sub_categories_edu.each do |s|
+  SubCategory.create(title: s, category_id: 3)
+end
 
-SubCategory.create!([
-  { title: "Bangla", category: academic },
-  { title: "English", category: academic },
-  { title: "Mathmetics", category: academic },
-  { title: "Physics", category: academic },
-  { title: "Chemistry", category: academic },
-  { title: "Biology", category: academic },
-  { title: "Economics", category: academic },
-  { title: "Psychology", category: academic },
-  { title: "Accounting", category: academic },
-  { title: "Management", category: academic },
-  { title: "Marketing", category: academic }
-])
+sub_categories_religion = ["islam", "christianity", "buddhism", "hinduism", "atheism" ]
+sub_categories_religion.each do |s|
+  SubCategory.create(title: s, category_id: 4)
+end
 
-SubCategory.create!([
-  { title: "Encyclopedias", category: reference },
-  { title: "Dictionaries", category: reference },
-])
+sub_categories_reference = ["encyclopedia", "dictionary", "telephone_book", "atlas" ]
+sub_categories_reference.each do |s|
+  SubCategory.create(title: s, category_id: 5)
+end
+
+sub_categories_tech = ["programming", "cybersecurity", "ai", "robotics"]
+sub_categories_tech.each do |s|
+  SubCategory.create(title: s, category_id: 6)
+end
 
 puts "Creating genres..."
-genres = Genre.create!([
-  { title: "Adventure" },
-  { title: "Romance" },
-  { title: "Thriller" },
-  { title: "Drama" },
-  { title: "Fantasy" },
-  { title: "Historical" },
-  { title: "Educational" }
-])
-
+genre = ["travel", "adventure", "technology", "robotics", "romance", "thriller", "drama", "fantasy", "history", "education"]
+genre.each do |s|
+  Genre.create(title: s)
+end
 
 puts "Creating authors..."
-authors = Author.create!([
+Author.create!([
   {
     name: "J.K. Rowling",
     description: "British author known for Harry Potter series",
@@ -116,9 +93,9 @@ books = [
     book_location: "Section A, Shelf 3",
     publishing_date: Date.new(1949, 6, 8),
     publisher: "Secker and Warburg",
-    category: non_fiction,
-    sub_category: SubCategory.find_by(title: "Contemporary Fiction"),
-    author: Author.find_by(name: "George Orwell")
+    category_id: 1,
+    sub_category_id: 1,
+    author_id: 1
   },
   {
     title: "Pride and Prejudice",
@@ -133,15 +110,22 @@ books = [
     book_location: "Section B, Shelf 2",
     publishing_date: Date.new(1813, 1, 28),
     publisher: "T. Egerton, Whitehall",
-    category: fiction,
-    sub_category: SubCategory.find_by(title: "Classic Literature"),
-    author: Author.find_by(name: "Jane Austen")
+    category_id: 1,
+    sub_category_id: 2,
+    author_id: 3
   }
 ]
 
 books.each do |book_data|
-  book = Book.create!(book_data)
-  book.genres << genres.sample(2)
+  Book.create!(book_data)
 end
 
-puts "Seed data created successfully!"  
+puts "feeding books_genres data"
+BooksGenre.create!(book_id: 1, genre_id: 1)
+BooksGenre.create!(book_id: 1, genre_id: 3)
+BooksGenre.create!(book_id: 1, genre_id: 5)
+BooksGenre.create!(book_id: 2, genre_id: 2)
+
+
+puts ".\n.\n.\n."
+puts "Seed data created successfully!"
