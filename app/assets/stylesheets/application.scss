@@ -15,5 +15,17 @@
  */
 @import "bootstrap";
 
-
+.hover-item {
+    position: relative;
+    padding: 10px;
+  }
+  
+  .hover-button {
+    display: none;
+  }
+  
+  .hover-item:hover .hover-button {
+    display: inline-block;
+  }
+  
 
