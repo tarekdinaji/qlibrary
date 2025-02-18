@@ -1,0 +1,36 @@
+<h2>Book Adjectives</h2>
+<br>
+<div class= "container">
+  <div class="row" >
+    <div class= "col-4" >
+      <div class= "category">
+        <h4>Main Categories</h4>
+        <% @categories.each do |category| %>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <%= category.title.capitalize %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class= "col-4" >
+      <div class= "sub_category">
+        <h4>Sub-Categories</h4>
+        <% @sub_categories.each do |sub_category| %>
+        <%= sub_category.title.capitalize %>
+        <br>
+        <% end %>
+      </div>
+    </div>
+    <div class= "col-4">
+      <div class= "genre">
+        <h4>All Genres</h4>
+        <% @genres.each do |genres| %>
+        <%= genres.title.capitalize %>
+        <br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

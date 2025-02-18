@@ -1,0 +1,2 @@
+module BookAdjectivesHelper
+end
