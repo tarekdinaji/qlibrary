@@ -1,6 +1,4 @@
 class BookAdjectivesController < ApplicationController
-  before_action :set_book_adjective, only: [:edit, :update]
-
   def index
     @categories = Category.all
     @sub_categories = SubCategory.all
@@ -8,19 +6,38 @@ class BookAdjectivesController < ApplicationController
   end
 
   def edit
+    set_book_adjective
+    @categories = Category.all
   end
 
   def update
-    if @book_adjective.update(book_adjective_params)
-      redirect_to book_adjectives_path, notice: "#{@book_adjective.class.name} updated successfully!"
-    else
-      render :edit
-    end
+    byebug
+    update_categories if params[:category]
+    update_sub_categories if params[:sub_category]
+    update_genres if params[:genre]
+
+    redirect_to book_adjectives_path, notice: "Updated successfully!"
   end
 
   private
 
+  def update_categories
+      category = Category.find(id)
+      category.update
+  end
+
+  def update_sub_categories
+      sub_category = SubCategory.find(id)
+      sub_category.update
+  end
+
+  def update_genres
+      genre = Genre.find(id)
+      genre.update
+  end
+
   def set_book_adjective
+    @type = params[:type]
     case params[:type]
     when "Category"
       @book_adjective = Category.find(params[:id])
@@ -34,6 +51,6 @@ class BookAdjectivesController < ApplicationController
   end
 
   def book_adjective_params
-    params.require(:book_adjective).permit(:title)
+    params.require(:book_adjective).permit(:title, :category_id)
   end
 end
