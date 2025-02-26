@@ -1,0 +1,8 @@
+<h1>Genre: <%= @genre.title %></h1>
+
+<p>Details about this genre</p>
+
+<%= link_to "Edit", edit_genre_path(@genre) %> |
+<%= link_to "Back", genres_path %>
+
+<%= button_to "Delete", @genre, method: :delete, data: { confirm: "Are you sure?" } %>

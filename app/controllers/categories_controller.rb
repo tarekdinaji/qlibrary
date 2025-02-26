@@ -13,7 +13,6 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to @category, notice: "Category Created successfully!"
     else
-
       render :root, status: :unprocessable_entity
     end
   end

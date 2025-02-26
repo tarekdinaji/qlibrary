@@ -1,0 +1,14 @@
+<h1>SubCategories</h1>
+
+<%= link_to "New SubCategory", new_sub_category_path %>
+
+<ul>
+  <% @sub_categories.each do |sub_category| %>
+    <li>
+      <%= sub_category.title %> |
+      <%= link_to "Show", sub_category_path(sub_category) %> |
+      <%= link_to "Edit", edit_sub_category_path(sub_category) %> |
+      <%= button_to "Delete", sub_category, method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>

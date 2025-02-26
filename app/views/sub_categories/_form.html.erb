@@ -1,0 +1,8 @@
+<%= form_with model: @sub_category do |form| %>
+  <p>
+    <%= form.label :title, "Title" %><br>
+    <%= form.text_field :title %>
+  </p>
+
+  <%= form.submit "Save" %>
+<% end %>
