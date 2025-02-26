@@ -1,6 +1,4 @@
 class SubCategoriesController < ApplicationController
-  before_action :set_genre, only: [:show, :edit, :update, :destroy]
-
   def index
     @sub_categories = SubCategory.all
   end
@@ -48,6 +46,6 @@ class SubCategoriesController < ApplicationController
   end
 
   def sub_category_params
-    params.require(:sub_category).permit(:title)
+    params.require(:sub_category).permit(:title, :category)
   end
 end

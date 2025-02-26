@@ -1,11 +1,11 @@
 class GenresController < ApplicationController
-  before_action :set_genre, only: [:show, :edit, :update, :destroy]
 
   def index
     @genres = Genre.all
   end
 
   def show
+    set_genre
   end
 
   def new
@@ -22,9 +22,11 @@ class GenresController < ApplicationController
   end
 
   def edit
+    set_genre
   end
 
   def update
+    set_genre
     if @genre.update(genre_params)
       redirect_to @genre, notice: "Genre updated successfully!"
     else
@@ -33,6 +35,7 @@ class GenresController < ApplicationController
   end
 
   def destroy
+    set_genre
     @genre.destroy
     redirect_to genres_path, alert: "Genre deleted successfully!"
   end

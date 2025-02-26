@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def show
-    set_category_params
+    set_category
   end
 
   def new
@@ -13,16 +13,16 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to @category, notice: "Category Created successfully!"
     else
-      render :root, status: :unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
   def edit
-    set_category_params
+    set_category
   end
 
   def update
-    set_category_params
+    set_category
     if @category.update
       redirect_to @category, notice: "Updated successfully!"
     else
@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   private
 
   private
-    def set_category_params
+    def set_category
       @category = Category.find(params[:id])
     end
 

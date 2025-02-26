@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :categories, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :sub_categories
   resources :genres
+  get "genres/index", to: "genres#index"
 end
