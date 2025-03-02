@@ -9,10 +9,13 @@ class SubCategoriesController < ApplicationController
 
   def new
     @sub_category = SubCategory.new
+    @categories = Category.all
   end
 
   def create
     @sub_category = SubCategory.new(sub_category_params)
+    @categories = Category.all
+
     if @sub_category.save
       redirect_to @sub_category, notice: "SubCategory created successfully!"
     else
@@ -46,6 +49,6 @@ class SubCategoriesController < ApplicationController
   end
 
   def sub_category_params
-    params.require(:sub_category).permit(:title, :category)
+    params.require(:sub_category).permit(:title, :category_id)
   end
 end
