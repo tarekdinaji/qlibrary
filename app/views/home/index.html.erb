@@ -1,2 +1,31 @@
-<h1> Homepage </h1>
+<h3>All Books</h3>
 
+<% @books.each do |book| %>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><%= book.title %></h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+<br>
+
+<% end %>
+
+<!-- 
+  1. Add 20 various category/author book info into the seed file
+  2. Create filters for the home/index file so that all the books can be 
+  sorted by Name, by writer, by category, by Year, by Genre, by Age/reader, and by language.
+  3. update the book info card on home/index file so that all relevant information can be seen.
+  4. (Optional) add necesery links/buttons (details/show, edit, destroy and create). Update the menubar as well
+
+
+-->
