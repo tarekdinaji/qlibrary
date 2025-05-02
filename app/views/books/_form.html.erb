@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  
+
+  <%= form_with(model: @book, local: true) do |f| %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :edition %>
+        <%= f.text_field :edition, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :language %>
+        <%= f.text_field :language, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :isbn %>
+        <%= f.text_field :isbn, class: "form-control" %>
+      </div>
+
+      <div class="col-md-12">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :cover_image %>
+        <%= f.text_field :cover_image, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :available_copy %>
+        <%= f.number_field :available_copy, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :total_copy %>
+        <%= f.number_field :total_copy, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :book_location %>
+        <%= f.text_field :book_location, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :publishing_date %>
+        <%= f.date_field :publishing_date, class: "form-control" %>
+      </div>
+
+      <div class="col-md-6">
+        <%= f.label :publisher %>
+        <%= f.text_field :publisher, class: "form-control" %>
+      </div>
+
+      <div class="col-md-4">
+        <%= f.label :category_id %>
+        <%= f.collection_select :category_id, Category.all, :id, :title, { prompt: "Select Category" }, class: "form-select" %>
+      </div>
+
+      <div class="col-md-4">
+        <%= f.label :sub_category_id %>
+        <%= f.collection_select :sub_category_id, SubCategory.all, :id, :title, { prompt: "Select Sub Category" }, class: "form-select" %>
+      </div>
+
+      <div class="col-md-4">
+        <%= f.label :author_id %>
+        <%= f.collection_select :author_id, Author.all, :id, :name, { prompt: "Select Author" }, class: "form-select" %>
+      </div>
+    </div>
+
+    <%= f.submit "Create Book", class: "btn btn-primary mt-3" %>
+  <% end %>
+</div>

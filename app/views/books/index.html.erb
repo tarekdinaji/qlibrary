@@ -1,0 +1,33 @@
+
+<h1 class="mb-4"><h4 class="mb-4">Books (<%= @books.count %>)</h4></h1>
+
+<%= link_to 'New Book', new_book_path %>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <% @books.each do |book| %>
+    <div class="col">
+      <div class="card h- shadow-sm">
+        
+
+        <div class="card-body">
+          <h5 class="card-title"><%= book.title %></h5>
+          <p class="card-text text-muted">
+            <strong>Author:</strong> <%= book.author.name if book.author %><br>
+            <strong>Publisher:</strong> <%= book.publisher %><br>
+            <strong>Edition:</strong> <%= book.edition %><br>
+            <strong>Language:</strong> <%= book.language %><br>
+            <strong>ISBN:</strong> <%= book.isbn %>
+          </p>
+        </div>
+
+        <div class="card-footer text-muted small">
+          <strong>Copies:</strong> <%= book.available_copy %> available / <%= book.total_copy %> total<br>
+          <strong>Location:</strong> <%= book.book_location %><br>
+          <strong>Published:</strong> <%= book.publishing_date.strftime("%B %d, %Y") rescue "-" %>
+          <div class="card-footer bg-white">
+            <%= link_to 'View Details', book_path(book), class: "btn btn-primary btn-sm w-100" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
