@@ -29,3 +29,21 @@
   }
   
 
+/* Fix for fixed navbar */
+body {
+  padding-top: 56px;
+  min-height: 100vh;
+}
+
+/* Adjust for mobile view */
+@media (max-width: 992px) {
+  body {
+    padding-top: 72px;
+  }
+}
+
+/* Better dropdown menu for fixed navbar */
+.dropdown-menu {
+  max-height: 60vh;
+  overflow-y: auto;
+}

@@ -3,23 +3,7 @@ class BooksController < ApplicationController
   
     # GET /books
     def index
-      @books = Book.includes(:author, :category, :sub_category, :genres).all
-    
-      @books = @books.where("title ILIKE ?", "%#{params[:title]}%") if params[:title].present?
-      @books = @books.where(author_id: params[:author_id]) if params[:author_id].present?
-      @books = @books.where(category_id: params[:category_id]) if params[:category_id].present?
-      @books = @books.where(sub_category_id: params[:sub_category_id]) if params[:sub_category_id].present?
-      @books = @books.where(language: params[:language]) if params[:language].present?
-    
-      if params[:genre_id].present?
-        @books = @books.joins(:genres).where(genres: { id: params[:genre_id] }).distinct
-      end
-    
-      @categories = Category.all
-      @sub_categories = SubCategory.all
-      @genres = Genre.all
-      @languages = Book.select(:language).distinct.pluck(:language)
-      @authors = Author.all
+      
       @books = Book.all
     end
   
